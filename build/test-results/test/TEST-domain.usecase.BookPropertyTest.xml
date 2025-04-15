@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="domain.usecase.BookPropertyTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2025-04-15T09:02:50.374Z" hostname="Hugo-Linux" time="0.115">
+<testsuite name="domain.usecase.BookPropertyTest" tests="2" skipped="0" failures="0" errors="0" timestamp="2025-04-15T12:53:46.422Z" hostname="Hugo-Linux" time="0.165">
   <properties/>
-  <testcase name="should add any valid book without throwing" classname="domain.usecase.BookPropertyTest" time="0.115"/>
+  <testcase name="should add any valid book without throwing" classname="domain.usecase.BookPropertyTest" time="0.154"/>
+  <testcase name="should add two books and verify both saves" classname="domain.usecase.BookPropertyTest" time="0.008"/>
   <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[WARNING: A Java agent has been loaded dynamically (/home/hugo/.gradle/caches/modules-2/files-2.1/net.bytebuddy/byte-buddy-agent/1.15.11/a38b16385e867f59a641330f0362ebe742788ed8/byte-buddy-agent-1.15.11.jar)
 WARNING: If a serviceability tool is in use, please run with -XX:+EnableDynamicAgentLoading to hide this warning
