@@ -4,6 +4,7 @@ plugins {
 	kotlin("plugin.spring") version "1.9.25"
 	id("org.springframework.boot") version "3.4.4"
 	id("io.spring.dependency-management") version "1.1.7"
+	id("info.solidsoft.pitest") version "1.15.0"
 }
 
 group = "com.example"
@@ -40,7 +41,6 @@ kotlin {
 
 tasks.test {
 	useJUnitPlatform()
-
 	finalizedBy(tasks.jacocoTestReport)
 
 	reports {
@@ -61,4 +61,16 @@ tasks.jacocoTestReport {
 		html.required.set(true)
 		csv.required.set(false)
 	}
+}
+
+pitest {
+	junit5PluginVersion.set("1.2.1")
+	pitestVersion.set("1.15.0")
+
+	targetClasses.set(listOf("book.domain.*"))
+	targetTests.set(listOf("domain.usecase.*"))
+
+	threads.set(4)
+	outputFormats.set(listOf("HTML", "XML"))
+	timestampedReports.set(false)
 }
