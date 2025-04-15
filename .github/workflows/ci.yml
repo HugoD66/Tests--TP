@@ -27,11 +27,20 @@ jobs:
       - name: 🛠 Build & test with Gradle
         run: ./gradlew build
 
+      - name: 🧪 Run JaCoCo coverage report
+        run: ./gradlew jacocoTestReport
+
       - name: 📦 Upload test reports (HTML)
         uses: actions/upload-artifact@v4
         with:
           name: test-report-html
           path: build/reports/tests/test/
+
+      - name: 📈 Upload JaCoCo coverage report
+        uses: actions/upload-artifact@v4
+        with:
+          name: jacoco-report
+          path: build/reports/jacoco/test/html/
 
       - name: 📊 Publish test results on GitHub
         uses: EnricoMi/publish-unit-test-result-action@v2
