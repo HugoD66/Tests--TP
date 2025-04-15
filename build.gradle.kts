@@ -39,3 +39,12 @@ kotlin {
 tasks.withType<Test> {
 	useJUnitPlatform()
 }
+
+tasks.test {
+	useJUnitPlatform()
+
+	reports {
+		junitXml.required.set(true)
+		html.required.set(true)
+	}
+}
