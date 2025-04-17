@@ -1,8 +1,11 @@
 package domain.usecase
 
+import book.domain.model.Book
 import book.domain.port.BookRepositoryPort
 import book.domain.usecase.BookUseCase
 import io.kotest.core.spec.style.FunSpec
+import io.kotest.matchers.collections.shouldContainExactly
+import io.kotest.matchers.collections.shouldContainExactlyInAnyOrder
 import io.mockk.*
 import org.springframework.boot.test.context.SpringBootTest
 
@@ -39,9 +42,19 @@ class BookPropertyTest : FunSpec({
 		useCase.addBook(title1, author1)
 		useCase.addBook(title2, author2)
 
-		verifySequence {
-			mock.save(match { it.title == title1 && it.author == author1 })
-			mock.save(match { it.title == title2 && it.author == author2 })
-		}
+		every { mock.findAll() } returns listOf(
+			Book(title1, author1),
+			Book(title2, author2)
+		)
+
+		val books = useCase.listBooksAlphabetically()
+
+		books.shouldContainExactly(
+			listOf(
+				Book(title1, author1),
+				Book(title2, author2)
+			)
+		)
 	}
+
 })
