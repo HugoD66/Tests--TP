@@ -58,8 +58,9 @@ pitest {
 	junit5PluginVersion.set("1.2.1")
 	pitestVersion.set("1.15.0")
 
-	targetClasses.set(listOf("com.example.demo.book.*"))
-	targetTests.set(listOf("com.example.demo.usecase.*"))
+	targetClasses.set(listOf("com.example.demo.domain.*")) // ✅ Cœur métier
+	targetTests.set(listOf("com.example.demo.*"))           // ✅ Tous les tests
+
 
 	threads.set(4)
 	outputFormats.set(listOf("HTML", "XML"))
