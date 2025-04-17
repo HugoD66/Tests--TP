@@ -1,5 +1,6 @@
 package com.example.demo
 
+import com.example.demo.book.cipher
 import io.kotest.assertions.throwables.shouldThrow
 import io.kotest.core.spec.style.FunSpec
 import io.kotest.matchers.shouldBe
@@ -15,21 +16,21 @@ class Tp1ApplicationTests : FunSpec({
 	context("cipher input validation") {
 		test("should throw if char is not a single character") {
 			val exception = shouldThrow<IllegalArgumentException> {
-				cipher("AB", 2)
+                cipher("AB", 2)
 			}
 			exception.message shouldBe "test must be a single character"
 		}
 
 		test("should throw if char is not uppercase") {
 			val exception = shouldThrow<IllegalArgumentException> {
-				cipher("a", 2)
+                cipher("a", 2)
 			}
 			exception.message shouldBe "test must be an uppercase letter"
 		}
 
 		test("should throw if key is negative") {
 			val exception = shouldThrow<IllegalArgumentException> {
-				cipher("A", -2)
+                cipher("A", -2)
 			}
 			exception.message shouldBe "key must be a positive number"
 		}

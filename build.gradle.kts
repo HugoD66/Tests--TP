@@ -103,6 +103,7 @@ val testIntegrationImplementation: Configuration by configurations.getting {
 
 dependencies {
 	implementation("org.springframework.boot:spring-boot-starter")
+	implementation("org.springframework.boot:spring-boot-starter-web")
 	implementation("org.jetbrains.kotlin:kotlin-reflect")
 
 	//Dépendances pour la DB
