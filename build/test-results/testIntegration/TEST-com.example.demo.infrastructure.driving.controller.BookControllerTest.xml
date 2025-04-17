@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="com.example.demo.infrastructure.driving.controller.BookControllerTest" tests="4" skipped="0" failures="0" errors="0" timestamp="2025-04-17T13:01:40.491Z" hostname="Hugo-Linux" time="1.451">
+<testsuite name="com.example.demo.infrastructure.driving.controller.BookControllerTest" tests="4" skipped="0" failures="0" errors="0" timestamp="2025-04-17T14:19:53.902Z" hostname="Hugo-Linux" time="1.526">
   <properties/>
-  <testcase name="should return 500 when use case throws unexpected exception()" classname="com.example.demo.infrastructure.driving.controller.BookControllerTest" time="0.579"/>
-  <testcase name="should return books when GET is called()" classname="com.example.demo.infrastructure.driving.controller.BookControllerTest" time="0.83"/>
-  <testcase name="should return 400 when POST payload is invalid()" classname="com.example.demo.infrastructure.driving.controller.BookControllerTest" time="0.018"/>
-  <testcase name="should create a book when POST is called()" classname="com.example.demo.infrastructure.driving.controller.BookControllerTest" time="0.015"/>
-  <system-out><![CDATA[15:01:36.671 [Test worker] INFO org.springframework.test.context.support.AnnotationConfigContextLoaderUtils -- Could not detect default configuration classes for test class [com.example.demo.infrastructure.driving.controller.BookControllerTest]: BookControllerTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
-15:01:37.264 [Test worker] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper -- Found @SpringBootConfiguration com.example.demo.Tp1Application for test class com.example.demo.infrastructure.driving.controller.BookControllerTest
+  <testcase name="should return 500 when use case throws unexpected exception()" classname="com.example.demo.infrastructure.driving.controller.BookControllerTest" time="0.667"/>
+  <testcase name="should return books when GET is called()" classname="com.example.demo.infrastructure.driving.controller.BookControllerTest" time="0.819"/>
+  <testcase name="should return 400 when POST payload is invalid()" classname="com.example.demo.infrastructure.driving.controller.BookControllerTest" time="0.019"/>
+  <testcase name="should create a book when POST is called()" classname="com.example.demo.infrastructure.driving.controller.BookControllerTest" time="0.014"/>
+  <system-out><![CDATA[2025-04-17T16:19:52.501+02:00  INFO 91501 --- [TP1] [    Test worker] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [com.example.demo.infrastructure.driving.controller.BookControllerTest]: BookControllerTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2025-04-17T16:19:52.543+02:00  INFO 91501 --- [TP1] [    Test worker] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration com.example.demo.Tp1Application for test class com.example.demo.infrastructure.driving.controller.BookControllerTest
 
   .   ____          _            __ _ _
  /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
@@ -17,12 +17,12 @@
 
  :: Spring Boot ::                (v3.4.4)
 
-2025-04-17T15:01:38.020+02:00  INFO 68834 --- [TP1] [    Test worker] c.e.d.i.d.controller.BookControllerTest  : Starting BookControllerTest using Java 21.0.6 with PID 68834 (started by hugo in /home/hugo/Travail/projects/test/TP1)
-2025-04-17T15:01:38.022+02:00  INFO 68834 --- [TP1] [    Test worker] c.e.d.i.d.controller.BookControllerTest  : No active profile set, falling back to 1 default profile: "default"
-2025-04-17T15:01:40.389+02:00  INFO 68834 --- [TP1] [    Test worker] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
-2025-04-17T15:01:40.389+02:00  INFO 68834 --- [TP1] [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
-2025-04-17T15:01:40.392+02:00  INFO 68834 --- [TP1] [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 2 ms
-2025-04-17T15:01:40.473+02:00  INFO 68834 --- [TP1] [    Test worker] c.e.d.i.d.controller.BookControllerTest  : Started BookControllerTest in 2.973 seconds (process running for 9.048)
+2025-04-17T16:19:52.595+02:00  INFO 91501 --- [TP1] [    Test worker] c.e.d.i.d.controller.BookControllerTest  : Starting BookControllerTest using Java 21.0.6 with PID 91501 (started by hugo in /home/hugo/Travail/projects/test/TP1)
+2025-04-17T16:19:52.596+02:00  INFO 91501 --- [TP1] [    Test worker] c.e.d.i.d.controller.BookControllerTest  : No active profile set, falling back to 1 default profile: "default"
+2025-04-17T16:19:53.850+02:00  INFO 91501 --- [TP1] [    Test worker] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+2025-04-17T16:19:53.851+02:00  INFO 91501 --- [TP1] [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2025-04-17T16:19:53.854+02:00  INFO 91501 --- [TP1] [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 1 ms
+2025-04-17T16:19:53.891+02:00  INFO 91501 --- [TP1] [    Test worker] c.e.d.i.d.controller.BookControllerTest  : Started BookControllerTest in 1.336 seconds (process running for 18.157)
 ]]></system-out>
   <system-err><![CDATA[WARNING: A Java agent has been loaded dynamically (/home/hugo/.gradle/caches/modules-2/files-2.1/net.bytebuddy/byte-buddy-agent/1.15.11/a38b16385e867f59a641330f0362ebe742788ed8/byte-buddy-agent-1.15.11.jar)
 WARNING: If a serviceability tool is in use, please run with -XX:+EnableDynamicAgentLoading to hide this warning

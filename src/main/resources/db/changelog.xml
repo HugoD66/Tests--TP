@@ -4,23 +4,17 @@
                    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
                    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
                    http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.8.xsd">
-    <changeSet id="20231009000500" author="jicay">
-    <preConditions onFail="MARK_RAN">
-        <not>
-            <tableExists tableName="demo"/>
-        </not>
-    </preConditions>
-
-    <createTable tableName="demo">
-        <column name="id" type="int">
-            <constraints nullable="false"/>
-        </column>
-        <column name="a" type="varchar">
-            <constraints nullable="false"/>
-        </column>
-    </createTable>
-
-    <addPrimaryKey columnNames="id" tableName="demo"/>
-    <addAutoIncrement tableName="demo" columnName="id"/>
+    <changeSet id="202504171600" author="hugo">
+        <createTable tableName="book">
+            <column name="id" type="serial">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="title" type="varchar(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="author" type="varchar(255)">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
     </changeSet>
 </databaseChangeLog>

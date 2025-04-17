@@ -51,9 +51,37 @@ Objectif : Implémenter la **logique métier** d’un gestionnaire de bibliothè
     - Génération des **rapports de test** dans le pipeline
 
 
-### 📁 TP3 - (à venir)
+### 📁 TP3 - Intégration Web & Base de Données
 
-Un nouveau TP viendra compléter ce dépôt. Il portera sur l'intégration, les tests de composants ou encore les tests de performance, en lien avec le reste du cours.
+Objectif : Exposer le domaine de gestion de livres via une API REST et persister les données dans une base **PostgreSQL**, dans une architecture modulaire et testable.
+
+- Ajout d’un **DTO** (`BookDTO`) pour les échanges HTTP
+- Création d’un **contrôleur REST** (`BookController`) avec deux routes :
+  - `GET /books` : retourne les livres triés
+  - `POST /books` : crée un nouveau livre (validation intégrée)
+- Déclaration des beans de l’application avec `@Configuration` (ex. `BookUseCase`)
+- Création d’un **adapter JDBC** (`BookDAO`) implémentant le port `BookRepositoryPort`
+- Écriture de requêtes SQL via `NamedParameterJdbcTemplate`
+- Gestion de la base avec **Liquibase** :
+  - Changelog XML de création de la table `book`
+  - Auto-exécution au lancement de l’application
+- Base PostgreSQL lancée via **Docker Compose**
+
+➡️ **Tests d’intégration** :
+- Création d’un test pour le contrôleur avec **MockMVC** et **Spring Mockk**
+- Gestion des cas nominaux, erreurs 400/500 et mapping DTO
+- Création d’un test pour le DAO avec **Testcontainers**
+  - Lancement automatique d’un conteneur PostgreSQL
+  - Nettoyage de la table avant chaque test
+  - Injection réelle du `BookDAO` via `@Autowired`
+
+➡️ **CI/CD avec GitHub Actions** :
+- Intégration de la suite de test d’intégration (`testIntegration`) dans Gradle
+- Rapport de couverture **JaCoCo** incluant les tests d’intégration
+- Pipeline GitHub Actions mis à jour :
+  - Build + tests unitaires & intégration
+  - Exécution de **PIT Mutation Testing**
+  - Upload des rapports JaCoCo, tests et mutations
 
 ---
 
