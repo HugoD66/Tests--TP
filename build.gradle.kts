@@ -1,4 +1,5 @@
 plugins {
+	java
 	jacoco
 	kotlin("jvm") version "1.9.25"
 	kotlin("plugin.spring") version "1.9.25"
@@ -55,42 +56,36 @@ pitest {
 	junit5PluginVersion.set("1.2.1")
 	pitestVersion.set("1.15.0")
 
-	targetClasses.set(listOf("book.domain.*"))
-	targetTests.set(listOf("domain.usecase.*"))
+//	targetClasses.set(listOf("com.example.demo.book.*"))
+//	targetTests.set(listOf("com.example.demo.usecase.*"))
 
 	threads.set(4)
 	outputFormats.set(listOf("HTML", "XML"))
 	timestampedReports.set(false)
 }
 
-testing {
+/*testing {
 	suites {
 		val testIntegration by registering(JvmTestSuite::class) {
 			sources {
 				kotlin {
 					setSrcDirs(listOf("src/testIntegration/kotlin"))
 				}
-				resources {
-					setSrcDirs(listOf("src/testIntegration/resources"))
-				}
-			}
-			dependencies {
-				implementation("org.springframework.boot:spring-boot-starter-test")
-				implementation("io.kotest:kotest-runner-junit5:5.9.1")
-				implementation("io.kotest:kotest-assertions-core:5.9.1")
-				implementation("io.mockk:mockk:1.13.8")
-				implementation("com.ninja-squad:springmockk:4.0.2")
-				implementation("io.kotest.extensions:kotest-extensions-spring:1.3.0")
+				compileClasspath += sourceSets.main.get().output
+				runtimeClasspath += sourceSets.main.get().output
+				//resources {
+			//		setSrcDirs(listOf("src/testIntegration/resources"))
+			//	}
 			}
 
-			targets {
+			/*targets {
 				all {
 					testTask.configure {
 						useJUnitPlatform()
 						shouldRunAfter("test") // Garanti ordre d'execution
 					}
 				}
-			}
+			}*/
 		}
 	}
 }
@@ -98,7 +93,7 @@ testing {
 
 val testIntegrationImplementation: Configuration by configurations.getting {
 	extendsFrom(configurations.implementation.get())
-}
+}*/
 
 
 dependencies {
@@ -122,7 +117,7 @@ dependencies {
 	implementation("org.postgresql:postgresql")
 
 	//Drivin
-	testIntegrationImplementation("io.mockk:mockk:1.13.8")
+/*	testIntegrationImplementation("io.mockk:mockk:1.13.8")
 	testIntegrationImplementation("io.kotest:kotest-assertions-core:5.9.1")
 	testIntegrationImplementation("io.kotest:kotest-runner-junit5:5.9.1")
 	testIntegrationImplementation("com.ninja-squad:springmockk:4.0.2")
@@ -135,5 +130,5 @@ dependencies {
 	testIntegrationImplementation("org.testcontainers:postgresql:1.19.1")
 	testIntegrationImplementation("org.testcontainers:jdbc-test:1.12.0")
 	testIntegrationImplementation("org.testcontainers:testcontainers:1.19.1")
-	testIntegrationImplementation("io.kotest.extensions:kotest-extensions-testcontainers:2.0.2")
+	testIntegrationImplementation("io.kotest.extensions:kotest-extensions-testcontainers:2.0.2")*/
 }

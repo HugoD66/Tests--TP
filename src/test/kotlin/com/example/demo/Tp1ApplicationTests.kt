@@ -1,6 +1,6 @@
 package com.example.demo
 
-import com.example.demo.book.cipher
+import com.example.demo.cipher
 import io.kotest.assertions.throwables.shouldThrow
 import io.kotest.core.spec.style.FunSpec
 import io.kotest.matchers.shouldBe
