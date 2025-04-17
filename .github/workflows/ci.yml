@@ -24,8 +24,8 @@ jobs:
           distribution: 'temurin'
           java-version: '17'
 
-      - name: 🛠 Build & test with Gradle
-        run: ./gradlew build
+      - name: 🛠 Build, unit & integration tests
+        run: ./gradlew build testIntegration
 
       - name: 🧪 Run JaCoCo coverage report
         run: ./gradlew jacocoTestReport
@@ -46,7 +46,9 @@ jobs:
         uses: EnricoMi/publish-unit-test-result-action@v2
         if: always()
         with:
-          files: build/test-results/test/*.xml
+          files: |
+            build/test-results/test/*.xml
+            build/test-results/testIntegration/*.xml
 
       - name: 🧬 Run PIT Mutation Testing
         run: ./gradlew pitest

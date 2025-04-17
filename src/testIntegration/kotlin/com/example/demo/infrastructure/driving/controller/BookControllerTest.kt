@@ -24,13 +24,11 @@ class BookControllerTest {
 
     @Test
     fun `should return books when GET is called`() {
-        // Arrange
         every { useCase.listBooksAlphabetically() } returns listOf(
             Book("Alpha", "Author A"),
             Book("Beta", "Author B")
         )
 
-        // Act + Assert
         mockMvc.get("/books")
             .andExpect {
                 status { isOk() }
@@ -57,4 +55,38 @@ class BookControllerTest {
 
         verify(exactly = 1) { useCase.addBook("New Book", "New Author") }
     }
+
+    //Fails :
+    @Test
+    fun `should return 400 when POST payload is invalid`() {
+        val payload = """{ "title": "", "author": "Author X" }"""
+
+        every { useCase.addBook(any(), any()) } throws IllegalArgumentException("Le titre ne peut pas être vide")
+
+        mockMvc.post("/books") {
+            contentType = MediaType.APPLICATION_JSON
+            content = payload
+        }.andExpect {
+            status { isBadRequest() }
+        }
+
+        verify(exactly = 1) { useCase.addBook("", "Author X") }
+    }
+
+    @Test
+    fun `should return 500 when use case throws unexpected exception`() {
+        val payload = """{ "title": "Valid Title", "author": "Author Y" }"""
+
+        every { useCase.addBook(any(), any()) } throws RuntimeException("Database error")
+
+        mockMvc.post("/books") {
+            contentType = MediaType.APPLICATION_JSON
+            content = payload
+        }.andExpect {
+            status { isInternalServerError() }
+        }
+
+        verify(exactly = 1) { useCase.addBook("Valid Title", "Author Y") }
+    }
+
 }

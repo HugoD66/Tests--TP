@@ -1,3 +1,5 @@
+import org.gradle.testing.jacoco.tasks.JacocoReport
+
 plugins {
 	java
 	jacoco
@@ -56,15 +58,15 @@ pitest {
 	junit5PluginVersion.set("1.2.1")
 	pitestVersion.set("1.15.0")
 
-//	targetClasses.set(listOf("com.example.demo.book.*"))
-//	targetTests.set(listOf("com.example.demo.usecase.*"))
+	targetClasses.set(listOf("com.example.demo.book.*"))
+	targetTests.set(listOf("com.example.demo.usecase.*"))
 
 	threads.set(4)
 	outputFormats.set(listOf("HTML", "XML"))
 	timestampedReports.set(false)
 }
 
-/*testing {
+testing {
 	suites {
 		val testIntegration by registering(JvmTestSuite::class) {
 			sources {
@@ -73,9 +75,9 @@ pitest {
 				}
 				compileClasspath += sourceSets.main.get().output
 				runtimeClasspath += sourceSets.main.get().output
-				//resources {
-			//		setSrcDirs(listOf("src/testIntegration/resources"))
-			//	}
+				resources {
+					setSrcDirs(listOf("src/testIntegration/resources"))
+				}
 			}
 
 			/*targets {
@@ -93,7 +95,7 @@ pitest {
 
 val testIntegrationImplementation: Configuration by configurations.getting {
 	extendsFrom(configurations.implementation.get())
-}*/
+}
 
 
 dependencies {
@@ -117,7 +119,7 @@ dependencies {
 	implementation("org.postgresql:postgresql")
 
 	//Drivin
-/*	testIntegrationImplementation("io.mockk:mockk:1.13.8")
+	testIntegrationImplementation("io.mockk:mockk:1.13.8")
 	testIntegrationImplementation("io.kotest:kotest-assertions-core:5.9.1")
 	testIntegrationImplementation("io.kotest:kotest-runner-junit5:5.9.1")
 	testIntegrationImplementation("com.ninja-squad:springmockk:4.0.2")
@@ -130,5 +132,17 @@ dependencies {
 	testIntegrationImplementation("org.testcontainers:postgresql:1.19.1")
 	testIntegrationImplementation("org.testcontainers:jdbc-test:1.12.0")
 	testIntegrationImplementation("org.testcontainers:testcontainers:1.19.1")
-	testIntegrationImplementation("io.kotest.extensions:kotest-extensions-testcontainers:2.0.2")*/
+	testIntegrationImplementation("io.kotest.extensions:kotest-extensions-testcontainers:2.0.2")
+}
+
+
+tasks.named("jacocoTestReport", JacocoReport::class) {
+	dependsOn("test", "testIntegration") // Ordre d'execution
+
+	executionData.setFrom(
+		fileTree(buildDir).include(
+			"/jacoco/test.exec",
+			"/jacoco/testIntegration.exec"
+		)
+	)
 }
