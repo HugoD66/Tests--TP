@@ -1,3 +1,3 @@
 package com.example.demo.infrastructure.driving.dto
 
-data class BookDTO(val title: String, val author: String)
+data class BookDTO(val title: String, val author: String, val isReserved: Boolean = false)

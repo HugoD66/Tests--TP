@@ -17,4 +17,12 @@
             </column>
         </createTable>
     </changeSet>
+
+    <changeSet id="202505051000" author="hugo">
+        <addColumn tableName="book">
+            <column name="is_reserved" type="BOOLEAN" defaultValueBoolean="false">
+                <constraints nullable="false"/>
+            </column>
+        </addColumn>
+    </changeSet>
 </databaseChangeLog>

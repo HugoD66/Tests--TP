@@ -46,7 +46,7 @@ class BookDAOTest {
 
     @Test
     fun `should save and retrieve a book`() {
-        val book = Book("1984", "George Orwell")
+        val book = Book("1984", "George Orwell", isReserved = true)
         bookDAO.save(book)
 
         val result = bookDAO.findAll()
@@ -54,6 +54,7 @@ class BookDAOTest {
         assertThat(result).hasSize(1)
         assertThat(result[0].title).isEqualTo("1984")
         assertThat(result[0].author).isEqualTo("George Orwell")
+        assertThat(result[0].isReserved).isTrue()
     }
 
     @Test
@@ -66,15 +67,39 @@ class BookDAOTest {
     @Test
     fun `should save and retrieve multiple books`() {
         val books = listOf(
-            Book("Dune", "Frank Herbert"),
-            Book("Le Petit Prince", "Antoine de Saint-Exupéry"),
-            Book("1984", "George Orwell")
+            Book("Dune", "Frank Herbert", isReserved = false),
+            Book("Le Petit Prince", "Antoine de Saint-Exupéry", isReserved = true),
+            Book("1984", "George Orwell", isReserved = false)
         )
         books.forEach { bookDAO.save(it) }
 
         val result = bookDAO.findAll()
 
         assertThat(result).hasSize(3)
-        assertThat(result).extracting("title").containsExactlyInAnyOrder("Dune", "Le Petit Prince", "1984")
+        assertThat(result).anyMatch { it.title == "Le Petit Prince" && it.isReserved }
+        assertThat(result).anyMatch { it.title == "1984" && !it.isReserved }
+        assertThat(result).anyMatch { it.title == "Dune" && !it.isReserved }
+    }
+
+    @Test
+    fun `should reserve a book successfully`() {
+        val book = Book("1984", "George Orwell", isReserved = false)
+        bookDAO.save(book)
+
+        val reserved = bookDAO.reserveBook("1984", "George Orwell")
+        val result = bookDAO.findAll().first()
+
+        assertThat(reserved).isTrue()
+        assertThat(result.isReserved).isTrue()
+    }
+
+    @Test
+    fun `should not reserve a book already reserved`() {
+        val book = Book("1984", "George Orwell", isReserved = true)
+        bookDAO.save(book)
+
+        val reserved = bookDAO.reserveBook("1984", "George Orwell")
+
+        assertThat(reserved).isFalse()
     }
 }

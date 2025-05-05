@@ -23,7 +23,7 @@
 <tr>
 <td>
 <div class="infoBox" id="tests">
-<div class="counter">3</div>
+<div class="counter">5</div>
 <p>tests</p>
 </div>
 </td>
@@ -41,7 +41,7 @@
 </td>
 <td>
 <div class="infoBox" id="duration">
-<div class="counter">0.147s</div>
+<div class="counter">0.162s</div>
 <p>duration</p>
 </div>
 </td>
@@ -78,18 +78,28 @@
 </tr>
 </thead>
 <tr>
+<td class="success">should not reserve a book already reserved()</td>
+<td class="success">0.113s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">should reserve a book successfully()</td>
+<td class="success">0.010s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
 <td class="success">should retrieve empty list when no books()</td>
-<td class="success">0.005s</td>
+<td class="success">0.006s</td>
 <td class="success">passed</td>
 </tr>
 <tr>
 <td class="success">should save and retrieve a book()</td>
-<td class="success">0.131s</td>
+<td class="success">0.023s</td>
 <td class="success">passed</td>
 </tr>
 <tr>
 <td class="success">should save and retrieve multiple books()</td>
-<td class="success">0.011s</td>
+<td class="success">0.010s</td>
 <td class="success">passed</td>
 </tr>
 </table>
@@ -97,29 +107,29 @@
 <div class="tab">
 <h2>Standard output</h2>
 <span class="code">
-<pre>15:39:08.617 [Test worker] INFO org.testcontainers.images.PullPolicy -- Image pull policy will be performed by: DefaultPullPolicy()
-15:39:08.626 [Test worker] INFO org.testcontainers.utility.ImageNameSubstitutor -- Image name substitution will be performed by: DefaultImageNameSubstitutor (composite of 'ConfigurationFileImageNameSubstitutor' and 'PrefixingImageNameSubstitutor')
-15:39:09.092 [Test worker] INFO org.testcontainers.dockerclient.DockerClientProviderStrategy -- Loaded org.testcontainers.dockerclient.UnixSocketClientProviderStrategy from ~/.testcontainers.properties, will try it first
-15:39:09.729 [Test worker] INFO org.testcontainers.dockerclient.DockerClientProviderStrategy -- Found Docker environment with local Unix socket (unix:///var/run/docker.sock)
-15:39:09.731 [Test worker] INFO org.testcontainers.DockerClientFactory -- Docker host IP address is localhost
-15:39:09.758 [Test worker] INFO org.testcontainers.DockerClientFactory -- Connected to docker: 
+<pre>16:39:59.866 [Test worker] INFO org.testcontainers.images.PullPolicy -- Image pull policy will be performed by: DefaultPullPolicy()
+16:39:59.875 [Test worker] INFO org.testcontainers.utility.ImageNameSubstitutor -- Image name substitution will be performed by: DefaultImageNameSubstitutor (composite of 'ConfigurationFileImageNameSubstitutor' and 'PrefixingImageNameSubstitutor')
+16:40:00.203 [Test worker] INFO org.testcontainers.dockerclient.DockerClientProviderStrategy -- Loaded org.testcontainers.dockerclient.UnixSocketClientProviderStrategy from ~/.testcontainers.properties, will try it first
+16:40:00.627 [Test worker] INFO org.testcontainers.dockerclient.DockerClientProviderStrategy -- Found Docker environment with local Unix socket (unix:///var/run/docker.sock)
+16:40:00.629 [Test worker] INFO org.testcontainers.DockerClientFactory -- Docker host IP address is localhost
+16:40:00.651 [Test worker] INFO org.testcontainers.DockerClientFactory -- Connected to docker: 
   Server Version: 28.0.4
   API Version: 1.48
   Operating System: Linux Mint 21.3
   Total Memory: 15680 MB
-15:39:09.800 [Test worker] INFO tc.testcontainers/ryuk:0.5.1 -- Creating container for image: testcontainers/ryuk:0.5.1
-15:39:09.807 [Test worker] INFO org.testcontainers.utility.RegistryAuthLocator -- Failure when attempting to lookup auth config. Please ignore if you don't have images in an authenticated registry. Details: (dockerImageName: testcontainers/ryuk:0.5.1, configFile: /home/hugo/.docker/config.json, configEnv: DOCKER_AUTH_CONFIG). Falling back to docker-java default behaviour. Exception message: Status 404: No config supplied. Checked in order: /home/hugo/.docker/config.json (file not found), DOCKER_AUTH_CONFIG (not set)
-15:39:10.293 [Test worker] INFO tc.testcontainers/ryuk:0.5.1 -- Container testcontainers/ryuk:0.5.1 is starting: 43858f85f70d2ae2d135bc8313896cc2316de24aa86b123180945b6238f430db
-15:39:10.796 [Test worker] INFO tc.testcontainers/ryuk:0.5.1 -- Container testcontainers/ryuk:0.5.1 started in PT0.995547252S
-15:39:10.801 [Test worker] INFO org.testcontainers.utility.RyukResourceReaper -- Ryuk started - will monitor and terminate Testcontainers containers on JVM exit
-15:39:10.801 [Test worker] INFO org.testcontainers.DockerClientFactory -- Checking the system...
-15:39:10.802 [Test worker] INFO org.testcontainers.DockerClientFactory -- ✔︎ Docker server version should be at least 1.6.0
-15:39:10.802 [Test worker] INFO tc.postgres:15 -- Creating container for image: postgres:15
-15:39:10.828 [Test worker] INFO tc.postgres:15 -- Container postgres:15 is starting: 209de82a13a9dce310d96a8cfa2865cb0bde1355dea2a3864ceaa850d684dd67
-15:39:11.969 [Test worker] INFO tc.postgres:15 -- Container postgres:15 started in PT1.166126749S
-15:39:11.969 [Test worker] INFO tc.postgres:15 -- Container is started (JDBC URL: jdbc:postgresql://localhost:32769/testdb?loggerLevel=OFF)
-15:39:12.080 [Test worker] INFO org.springframework.test.context.support.AnnotationConfigContextLoaderUtils -- Could not detect default configuration classes for test class [com.example.demo.infrastructure.driven.postgres.BookDAOTest]: BookDAOTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
-15:39:12.540 [Test worker] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper -- Found @SpringBootConfiguration com.example.demo.Tp1Application for test class com.example.demo.infrastructure.driven.postgres.BookDAOTest
+16:40:00.754 [Test worker] INFO tc.testcontainers/ryuk:0.5.1 -- Creating container for image: testcontainers/ryuk:0.5.1
+16:40:00.763 [Test worker] INFO org.testcontainers.utility.RegistryAuthLocator -- Failure when attempting to lookup auth config. Please ignore if you don't have images in an authenticated registry. Details: (dockerImageName: testcontainers/ryuk:0.5.1, configFile: /home/hugo/.docker/config.json, configEnv: DOCKER_AUTH_CONFIG). Falling back to docker-java default behaviour. Exception message: Status 404: No config supplied. Checked in order: /home/hugo/.docker/config.json (file not found), DOCKER_AUTH_CONFIG (not set)
+16:40:00.996 [Test worker] INFO tc.testcontainers/ryuk:0.5.1 -- Container testcontainers/ryuk:0.5.1 is starting: 543c8305536103537579e24f7843e3653e2d4b4f18a218a9b40f0650eeee19d6
+16:40:01.422 [Test worker] INFO tc.testcontainers/ryuk:0.5.1 -- Container testcontainers/ryuk:0.5.1 started in PT0.668091936S
+16:40:01.428 [Test worker] INFO org.testcontainers.utility.RyukResourceReaper -- Ryuk started - will monitor and terminate Testcontainers containers on JVM exit
+16:40:01.428 [Test worker] INFO org.testcontainers.DockerClientFactory -- Checking the system...
+16:40:01.429 [Test worker] INFO org.testcontainers.DockerClientFactory -- ✔︎ Docker server version should be at least 1.6.0
+16:40:01.430 [Test worker] INFO tc.postgres:15 -- Creating container for image: postgres:15
+16:40:01.538 [Test worker] INFO tc.postgres:15 -- Container postgres:15 is starting: d56b81b4f0ee21067a296780182a258929e60e619ea81c2d09264516e0656592
+16:40:03.154 [Test worker] INFO tc.postgres:15 -- Container postgres:15 started in PT1.724518122S
+16:40:03.155 [Test worker] INFO tc.postgres:15 -- Container is started (JDBC URL: jdbc:postgresql://localhost:32790/testdb?loggerLevel=OFF)
+16:40:03.268 [Test worker] INFO org.springframework.test.context.support.AnnotationConfigContextLoaderUtils -- Could not detect default configuration classes for test class [com.example.demo.infrastructure.driven.postgres.BookDAOTest]: BookDAOTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+16:40:03.696 [Test worker] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper -- Found @SpringBootConfiguration com.example.demo.Tp1Application for test class com.example.demo.infrastructure.driven.postgres.BookDAOTest
 
   .   ____          _            __ _ _
  /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
@@ -130,32 +140,35 @@
 
  :: Spring Boot ::                (v3.4.4)
 
-2025-05-05T15:39:13.349+02:00  INFO 11157 --- [TP1] [    Test worker] c.e.d.i.driven.postgres.BookDAOTest      : Starting BookDAOTest using Java 21.0.6 with PID 11157 (started by hugo in /home/hugo/Travail/projects/test/TP1)
-2025-05-05T15:39:13.352+02:00  INFO 11157 --- [TP1] [    Test worker] c.e.d.i.driven.postgres.BookDAOTest      : No active profile set, falling back to 1 default profile: &quot;default&quot;
-2025-05-05T15:39:14.877+02:00  INFO 11157 --- [TP1] [    Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2025-05-05T15:39:15.109+02:00  INFO 11157 --- [TP1] [    Test worker] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@76f097ec
-2025-05-05T15:39:15.112+02:00  INFO 11157 --- [TP1] [    Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2025-05-05T15:39:15.464+02:00  INFO 11157 --- [TP1] [    Test worker] liquibase.database                       : Set default schema name to public
-2025-05-05T15:39:16.008+02:00  INFO 11157 --- [TP1] [    Test worker] liquibase.changelog                      : Creating database history table with name: public.databasechangelog
-2025-05-05T15:39:16.046+02:00  INFO 11157 --- [TP1] [    Test worker] liquibase.changelog                      : Reading from public.databasechangelog
-2025-05-05T15:39:16.152+02:00  INFO 11157 --- [TP1] [    Test worker] liquibase.lockservice                    : Successfully acquired change log lock
-2025-05-05T15:39:16.153+02:00  INFO 11157 --- [TP1] [    Test worker] liquibase.command                        : Using deploymentId: 6452356153
-2025-05-05T15:39:16.157+02:00  INFO 11157 --- [TP1] [    Test worker] liquibase.changelog                      : Reading from public.databasechangelog
-2025-05-05T15:39:16.179+02:00  INFO 11157 --- [TP1] [    Test worker] liquibase.ui                             : Running Changeset: db/changelog.xml::202504171600::hugo
-2025-05-05T15:39:16.191+02:00  INFO 11157 --- [TP1] [    Test worker] liquibase.changelog                      : Table book created
-2025-05-05T15:39:16.192+02:00  INFO 11157 --- [TP1] [    Test worker] liquibase.changelog                      : ChangeSet db/changelog.xml::202504171600::hugo ran successfully in 11ms
-2025-05-05T15:39:16.208+02:00  INFO 11157 --- [TP1] [    Test worker] liquibase.util                           : UPDATE SUMMARY
-2025-05-05T15:39:16.209+02:00  INFO 11157 --- [TP1] [    Test worker] liquibase.util                           : Run:                          1
-2025-05-05T15:39:16.209+02:00  INFO 11157 --- [TP1] [    Test worker] liquibase.util                           : Previously run:               0
-2025-05-05T15:39:16.209+02:00  INFO 11157 --- [TP1] [    Test worker] liquibase.util                           : Filtered out:                 0
-2025-05-05T15:39:16.209+02:00  INFO 11157 --- [TP1] [    Test worker] liquibase.util                           : -------------------------------
-2025-05-05T15:39:16.209+02:00  INFO 11157 --- [TP1] [    Test worker] liquibase.util                           : Total change sets:            1
-2025-05-05T15:39:16.211+02:00  INFO 11157 --- [TP1] [    Test worker] liquibase.util                           : Update summary generated
-2025-05-05T15:39:16.217+02:00  INFO 11157 --- [TP1] [    Test worker] liquibase.command                        : Update command completed successfully.
-2025-05-05T15:39:16.217+02:00  INFO 11157 --- [TP1] [    Test worker] liquibase.ui                             : Liquibase: Update has been successful. Rows affected: 1
-2025-05-05T15:39:16.222+02:00  INFO 11157 --- [TP1] [    Test worker] liquibase.lockservice                    : Successfully released change log lock
-2025-05-05T15:39:16.224+02:00  INFO 11157 --- [TP1] [    Test worker] liquibase.command                        : Command execution complete
-2025-05-05T15:39:16.961+02:00  INFO 11157 --- [TP1] [    Test worker] c.e.d.i.driven.postgres.BookDAOTest      : Started BookDAOTest in 4.164 seconds (process running for 13.572)
+2025-05-05T16:40:04.343+02:00  INFO 25225 --- [TP1] [    Test worker] c.e.d.i.driven.postgres.BookDAOTest      : Starting BookDAOTest using Java 21.0.6 with PID 25225 (started by hugo in /home/hugo/Travail/projects/test/TP1)
+2025-05-05T16:40:04.345+02:00  INFO 25225 --- [TP1] [    Test worker] c.e.d.i.driven.postgres.BookDAOTest      : No active profile set, falling back to 1 default profile: &quot;default&quot;
+2025-05-05T16:40:05.629+02:00  INFO 25225 --- [TP1] [    Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2025-05-05T16:40:05.872+02:00  INFO 25225 --- [TP1] [    Test worker] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@56272a62
+2025-05-05T16:40:05.874+02:00  INFO 25225 --- [TP1] [    Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2025-05-05T16:40:06.096+02:00  INFO 25225 --- [TP1] [    Test worker] liquibase.database                       : Set default schema name to public
+2025-05-05T16:40:06.587+02:00  INFO 25225 --- [TP1] [    Test worker] liquibase.changelog                      : Creating database history table with name: public.databasechangelog
+2025-05-05T16:40:06.641+02:00  INFO 25225 --- [TP1] [    Test worker] liquibase.changelog                      : Reading from public.databasechangelog
+2025-05-05T16:40:06.797+02:00  INFO 25225 --- [TP1] [    Test worker] liquibase.lockservice                    : Successfully acquired change log lock
+2025-05-05T16:40:06.798+02:00  INFO 25225 --- [TP1] [    Test worker] liquibase.command                        : Using deploymentId: 6456006798
+2025-05-05T16:40:06.801+02:00  INFO 25225 --- [TP1] [    Test worker] liquibase.changelog                      : Reading from public.databasechangelog
+2025-05-05T16:40:06.824+02:00  INFO 25225 --- [TP1] [    Test worker] liquibase.ui                             : Running Changeset: db/changelog.xml::202504171600::hugo
+2025-05-05T16:40:06.835+02:00  INFO 25225 --- [TP1] [    Test worker] liquibase.changelog                      : Table book created
+2025-05-05T16:40:06.836+02:00  INFO 25225 --- [TP1] [    Test worker] liquibase.changelog                      : ChangeSet db/changelog.xml::202504171600::hugo ran successfully in 10ms
+2025-05-05T16:40:06.845+02:00  INFO 25225 --- [TP1] [    Test worker] liquibase.ui                             : Running Changeset: db/changelog.xml::202505051000::hugo
+2025-05-05T16:40:06.851+02:00  INFO 25225 --- [TP1] [    Test worker] liquibase.changelog                      : Columns is_reserved(BOOLEAN) added to book
+2025-05-05T16:40:06.852+02:00  INFO 25225 --- [TP1] [    Test worker] liquibase.changelog                      : ChangeSet db/changelog.xml::202505051000::hugo ran successfully in 7ms
+2025-05-05T16:40:06.863+02:00  INFO 25225 --- [TP1] [    Test worker] liquibase.util                           : UPDATE SUMMARY
+2025-05-05T16:40:06.863+02:00  INFO 25225 --- [TP1] [    Test worker] liquibase.util                           : Run:                          2
+2025-05-05T16:40:06.863+02:00  INFO 25225 --- [TP1] [    Test worker] liquibase.util                           : Previously run:               0
+2025-05-05T16:40:06.863+02:00  INFO 25225 --- [TP1] [    Test worker] liquibase.util                           : Filtered out:                 0
+2025-05-05T16:40:06.864+02:00  INFO 25225 --- [TP1] [    Test worker] liquibase.util                           : -------------------------------
+2025-05-05T16:40:06.864+02:00  INFO 25225 --- [TP1] [    Test worker] liquibase.util                           : Total change sets:            2
+2025-05-05T16:40:06.866+02:00  INFO 25225 --- [TP1] [    Test worker] liquibase.util                           : Update summary generated
+2025-05-05T16:40:06.870+02:00  INFO 25225 --- [TP1] [    Test worker] liquibase.command                        : Update command completed successfully.
+2025-05-05T16:40:06.871+02:00  INFO 25225 --- [TP1] [    Test worker] liquibase.ui                             : Liquibase: Update has been successful. Rows affected: 2
+2025-05-05T16:40:06.873+02:00  INFO 25225 --- [TP1] [    Test worker] liquibase.lockservice                    : Successfully released change log lock
+2025-05-05T16:40:06.875+02:00  INFO 25225 --- [TP1] [    Test worker] liquibase.command                        : Command execution complete
+2025-05-05T16:40:07.527+02:00  INFO 25225 --- [TP1] [    Test worker] c.e.d.i.driven.postgres.BookDAOTest      : Started BookDAOTest in 3.6 seconds (process running for 12.222)
 </pre>
 </span>
 </div>
@@ -167,7 +180,7 @@
 <input id="line-wrapping-toggle" type="checkbox" autocomplete="off"/>
 </label>
 </div>Generated by 
-<a href="https://www.gradle.org">Gradle 8.13</a> at 5 mai 2025, 15:39:21</p>
+<a href="https://www.gradle.org">Gradle 8.13</a> at 5 mai 2025, 16:40:11</p>
 </div>
 </div>
 </body>

@@ -23,7 +23,7 @@
 <tr>
 <td>
 <div class="infoBox" id="tests">
-<div class="counter">4</div>
+<div class="counter">7</div>
 <p>tests</p>
 </div>
 </td>
@@ -41,7 +41,7 @@
 </td>
 <td>
 <div class="infoBox" id="duration">
-<div class="counter">1.387s</div>
+<div class="counter">1.693s</div>
 <p>duration</p>
 </div>
 </td>
@@ -82,22 +82,37 @@
 </thead>
 <tr>
 <td class="success">should create a book when POST is called()</td>
-<td class="success">0.018s</td>
+<td class="success">0.058s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">should fallback to default reservation value if isReserved is missing()</td>
+<td class="success">0.046s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">should reserve a book if not already reserved()</td>
+<td class="success">0.014s</td>
 <td class="success">passed</td>
 </tr>
 <tr>
 <td class="success">should return 400 when POST payload is invalid()</td>
-<td class="success">0.024s</td>
+<td class="success">0.051s</td>
 <td class="success">passed</td>
 </tr>
 <tr>
 <td class="success">should return 500 when use case throws unexpected exception()</td>
-<td class="success">0.579s</td>
+<td class="success">0.751s</td>
 <td class="success">passed</td>
 </tr>
 <tr>
 <td class="success">should return books when GET is called()</td>
-<td class="success">0.766s</td>
+<td class="success">0.757s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">should return message if book already reserved()</td>
+<td class="success">0.016s</td>
 <td class="success">passed</td>
 </tr>
 </table>
@@ -105,8 +120,8 @@
 <div class="tab">
 <h2>Standard output</h2>
 <span class="code">
-<pre>2025-05-05T15:39:18.280+02:00  INFO 11157 --- [TP1] [    Test worker] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [com.example.demo.infrastructure.driving.controller.BookControllerTest]: BookControllerTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
-2025-05-05T15:39:18.318+02:00  INFO 11157 --- [TP1] [    Test worker] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration com.example.demo.Tp1Application for test class com.example.demo.infrastructure.driving.controller.BookControllerTest
+<pre>2025-05-05T16:40:08.499+02:00  INFO 25225 --- [TP1] [    Test worker] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [com.example.demo.infrastructure.driving.controller.BookControllerTest]: BookControllerTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2025-05-05T16:40:08.531+02:00  INFO 25225 --- [TP1] [    Test worker] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration com.example.demo.Tp1Application for test class com.example.demo.infrastructure.driving.controller.BookControllerTest
 
   .   ____          _            __ _ _
  /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
@@ -117,12 +132,12 @@
 
  :: Spring Boot ::                (v3.4.4)
 
-2025-05-05T15:39:18.353+02:00  INFO 11157 --- [TP1] [    Test worker] c.e.d.i.d.controller.BookControllerTest  : Starting BookControllerTest using Java 21.0.6 with PID 11157 (started by hugo in /home/hugo/Travail/projects/test/TP1)
-2025-05-05T15:39:18.353+02:00  INFO 11157 --- [TP1] [    Test worker] c.e.d.i.d.controller.BookControllerTest  : No active profile set, falling back to 1 default profile: &quot;default&quot;
-2025-05-05T15:39:19.644+02:00  INFO 11157 --- [TP1] [    Test worker] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
-2025-05-05T15:39:19.645+02:00  INFO 11157 --- [TP1] [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
-2025-05-05T15:39:19.651+02:00  INFO 11157 --- [TP1] [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 2 ms
-2025-05-05T15:39:19.692+02:00  INFO 11157 --- [TP1] [    Test worker] c.e.d.i.d.controller.BookControllerTest  : Started BookControllerTest in 1.366 seconds (process running for 16.302)
+2025-05-05T16:40:08.564+02:00  INFO 25225 --- [TP1] [    Test worker] c.e.d.i.d.controller.BookControllerTest  : Starting BookControllerTest using Java 21.0.6 with PID 25225 (started by hugo in /home/hugo/Travail/projects/test/TP1)
+2025-05-05T16:40:08.565+02:00  INFO 25225 --- [TP1] [    Test worker] c.e.d.i.d.controller.BookControllerTest  : No active profile set, falling back to 1 default profile: &quot;default&quot;
+2025-05-05T16:40:09.828+02:00  INFO 25225 --- [TP1] [    Test worker] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+2025-05-05T16:40:09.828+02:00  INFO 25225 --- [TP1] [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2025-05-05T16:40:09.833+02:00  INFO 25225 --- [TP1] [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 2 ms
+2025-05-05T16:40:09.866+02:00  INFO 25225 --- [TP1] [    Test worker] c.e.d.i.d.controller.BookControllerTest  : Started BookControllerTest in 1.328 seconds (process running for 14.561)
 </pre>
 </span>
 </div>
@@ -144,7 +159,7 @@ WARNING: Dynamic loading of agents will be disallowed by default in a future rel
 <input id="line-wrapping-toggle" type="checkbox" autocomplete="off"/>
 </label>
 </div>Generated by 
-<a href="https://www.gradle.org">Gradle 8.13</a> at 5 mai 2025, 15:39:21</p>
+<a href="https://www.gradle.org">Gradle 8.13</a> at 5 mai 2025, 16:40:11</p>
 </div>
 </div>
 </body>
