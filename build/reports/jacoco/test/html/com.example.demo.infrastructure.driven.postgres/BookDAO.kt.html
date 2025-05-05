@@ -2,19 +2,44 @@
 
 import com.example.demo.domain.model.Book
 import com.example.demo.domain.port.BookRepositoryPort
-import org.springframework.stereotype.Service
+import org.springframework.jdbc.core.namedparam.NamedParameterJdbcTemplate
+import org.springframework.jdbc.core.namedparam.MapSqlParameterSource
+import org.springframework.jdbc.core.RowMapper
+import org.springframework.stereotype.Repository
+import java.sql.ResultSet
 
-<span class="nc" id="L7">@Service</span>
-<span class="nc" id="L8">class BookDAO : BookRepositoryPort {</span>
-
-<span class="nc" id="L10">    private val books = mutableListOf&lt;Book&gt;()</span>
+<span class="fc" id="L11">@Repository</span>
+<span class="fc" id="L12">class BookDAO(</span>
+<span class="fc" id="L13">    private val jdbcTemplate: NamedParameterJdbcTemplate</span>
+) : BookRepositoryPort {
 
     override fun save(book: Book) {
-<span class="nc" id="L13">        books.add(book)</span>
-<span class="nc" id="L14">    }</span>
+<span class="fc" id="L17">        val sql = &quot;&quot;&quot;</span>
+            INSERT INTO book (title, author)
+            VALUES (:title, :author)
+<span class="fc" id="L20">        &quot;&quot;&quot;.trimIndent()</span>
+
+<span class="fc" id="L22">        val params = MapSqlParameterSource()</span>
+<span class="fc" id="L23">            .addValue(&quot;title&quot;, book.title)</span>
+<span class="fc" id="L24">            .addValue(&quot;author&quot;, book.author)</span>
+
+<span class="fc" id="L26">        jdbcTemplate.update(sql, params)</span>
+<span class="fc" id="L27">    }</span>
 
     override fun findAll(): List&lt;Book&gt; {
-<span class="nc" id="L17">        return books.toList()</span>
+<span class="fc" id="L30">        val sql = &quot;SELECT title, author FROM book&quot;</span>
+
+<span class="fc" id="L32">        return jdbcTemplate.query(sql, BookRowMapper())</span>
+    }
+
+<span class="fc" id="L35">    class BookRowMapper : RowMapper&lt;Book&gt; {</span>
+        override fun mapRow(rs: ResultSet, rowNum: Int): Book {
+<span class="fc" id="L37">            return Book(</span>
+<span class="fc" id="L38">                title = rs.getString(&quot;title&quot;),</span>
+<span class="fc" id="L39">                author = rs.getString(&quot;author&quot;)</span>
+            )
+        }
     }
 }
+
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.10.202304240956</span></div></body></html>

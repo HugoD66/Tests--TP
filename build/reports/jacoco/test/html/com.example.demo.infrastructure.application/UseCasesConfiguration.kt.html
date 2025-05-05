@@ -5,11 +5,11 @@ import com.example.demo.domain.usecase.BookUseCase
 import org.springframework.context.annotation.Bean
 import org.springframework.context.annotation.Configuration
 
-<span class="nc" id="L8">@Configuration</span>
-<span class="nc" id="L9">class UseCasesConfiguration {</span>
+<span class="fc" id="L8">@Configuration</span>
+<span class="fc" id="L9">class UseCasesConfiguration {</span>
     @Bean
     fun myUseCase(bookRepositoryPort: BookRepositoryPort): BookUseCase {
-<span class="nc" id="L12">        return BookUseCase(bookRepositoryPort)</span>
+<span class="fc" id="L12">        return BookUseCase(bookRepositoryPort)</span>
     }
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.10.202304240956</span></div></body></html>

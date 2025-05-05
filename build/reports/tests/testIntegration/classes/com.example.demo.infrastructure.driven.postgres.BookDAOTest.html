@@ -41,7 +41,7 @@
 </td>
 <td>
 <div class="infoBox" id="duration">
-<div class="counter">0.137s</div>
+<div class="counter">0.147s</div>
 <p>duration</p>
 </div>
 </td>
@@ -79,17 +79,17 @@
 </thead>
 <tr>
 <td class="success">should retrieve empty list when no books()</td>
-<td class="success">0.004s</td>
+<td class="success">0.005s</td>
 <td class="success">passed</td>
 </tr>
 <tr>
 <td class="success">should save and retrieve a book()</td>
-<td class="success">0.121s</td>
+<td class="success">0.131s</td>
 <td class="success">passed</td>
 </tr>
 <tr>
 <td class="success">should save and retrieve multiple books()</td>
-<td class="success">0.012s</td>
+<td class="success">0.011s</td>
 <td class="success">passed</td>
 </tr>
 </table>
@@ -97,29 +97,29 @@
 <div class="tab">
 <h2>Standard output</h2>
 <span class="code">
-<pre>16:19:42.789 [Test worker] INFO org.testcontainers.images.PullPolicy -- Image pull policy will be performed by: DefaultPullPolicy()
-16:19:42.798 [Test worker] INFO org.testcontainers.utility.ImageNameSubstitutor -- Image name substitution will be performed by: DefaultImageNameSubstitutor (composite of 'ConfigurationFileImageNameSubstitutor' and 'PrefixingImageNameSubstitutor')
-16:19:43.227 [Test worker] INFO org.testcontainers.dockerclient.DockerClientProviderStrategy -- Loaded org.testcontainers.dockerclient.UnixSocketClientProviderStrategy from ~/.testcontainers.properties, will try it first
-16:19:43.725 [Test worker] INFO org.testcontainers.dockerclient.DockerClientProviderStrategy -- Found Docker environment with local Unix socket (unix:///var/run/docker.sock)
-16:19:43.726 [Test worker] INFO org.testcontainers.DockerClientFactory -- Docker host IP address is localhost
-16:19:43.812 [Test worker] INFO org.testcontainers.DockerClientFactory -- Connected to docker: 
+<pre>15:39:08.617 [Test worker] INFO org.testcontainers.images.PullPolicy -- Image pull policy will be performed by: DefaultPullPolicy()
+15:39:08.626 [Test worker] INFO org.testcontainers.utility.ImageNameSubstitutor -- Image name substitution will be performed by: DefaultImageNameSubstitutor (composite of 'ConfigurationFileImageNameSubstitutor' and 'PrefixingImageNameSubstitutor')
+15:39:09.092 [Test worker] INFO org.testcontainers.dockerclient.DockerClientProviderStrategy -- Loaded org.testcontainers.dockerclient.UnixSocketClientProviderStrategy from ~/.testcontainers.properties, will try it first
+15:39:09.729 [Test worker] INFO org.testcontainers.dockerclient.DockerClientProviderStrategy -- Found Docker environment with local Unix socket (unix:///var/run/docker.sock)
+15:39:09.731 [Test worker] INFO org.testcontainers.DockerClientFactory -- Docker host IP address is localhost
+15:39:09.758 [Test worker] INFO org.testcontainers.DockerClientFactory -- Connected to docker: 
   Server Version: 28.0.4
   API Version: 1.48
   Operating System: Linux Mint 21.3
   Total Memory: 15680 MB
-16:19:43.845 [Test worker] INFO tc.testcontainers/ryuk:0.5.1 -- Creating container for image: testcontainers/ryuk:0.5.1
-16:19:43.852 [Test worker] INFO org.testcontainers.utility.RegistryAuthLocator -- Failure when attempting to lookup auth config. Please ignore if you don't have images in an authenticated registry. Details: (dockerImageName: testcontainers/ryuk:0.5.1, configFile: /home/hugo/.docker/config.json, configEnv: DOCKER_AUTH_CONFIG). Falling back to docker-java default behaviour. Exception message: Status 404: No config supplied. Checked in order: /home/hugo/.docker/config.json (file not found), DOCKER_AUTH_CONFIG (not set)
-16:19:44.420 [Test worker] INFO tc.testcontainers/ryuk:0.5.1 -- Container testcontainers/ryuk:0.5.1 is starting: 43a6a18ad09828bbbab615af3f22afc58964bee355f44ca5a10387f11bbbba70
-16:19:44.846 [Test worker] INFO tc.testcontainers/ryuk:0.5.1 -- Container testcontainers/ryuk:0.5.1 started in PT1.001021527S
-16:19:44.856 [Test worker] INFO org.testcontainers.utility.RyukResourceReaper -- Ryuk started - will monitor and terminate Testcontainers containers on JVM exit
-16:19:44.856 [Test worker] INFO org.testcontainers.DockerClientFactory -- Checking the system...
-16:19:44.857 [Test worker] INFO org.testcontainers.DockerClientFactory -- ✔︎ Docker server version should be at least 1.6.0
-16:19:44.858 [Test worker] INFO tc.postgres:15 -- Creating container for image: postgres:15
-16:19:45.199 [Test worker] INFO tc.postgres:15 -- Container postgres:15 is starting: 61e901dc41830f06226fe5213530aecb2742ca26b06ff4240851aa977356e285
-16:19:46.588 [Test worker] INFO tc.postgres:15 -- Container postgres:15 started in PT1.729596767S
-16:19:46.589 [Test worker] INFO tc.postgres:15 -- Container is started (JDBC URL: jdbc:postgresql://localhost:32771/testdb?loggerLevel=OFF)
-16:19:46.713 [Test worker] INFO org.springframework.test.context.support.AnnotationConfigContextLoaderUtils -- Could not detect default configuration classes for test class [com.example.demo.infrastructure.driven.postgres.BookDAOTest]: BookDAOTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
-16:19:47.258 [Test worker] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper -- Found @SpringBootConfiguration com.example.demo.Tp1Application for test class com.example.demo.infrastructure.driven.postgres.BookDAOTest
+15:39:09.800 [Test worker] INFO tc.testcontainers/ryuk:0.5.1 -- Creating container for image: testcontainers/ryuk:0.5.1
+15:39:09.807 [Test worker] INFO org.testcontainers.utility.RegistryAuthLocator -- Failure when attempting to lookup auth config. Please ignore if you don't have images in an authenticated registry. Details: (dockerImageName: testcontainers/ryuk:0.5.1, configFile: /home/hugo/.docker/config.json, configEnv: DOCKER_AUTH_CONFIG). Falling back to docker-java default behaviour. Exception message: Status 404: No config supplied. Checked in order: /home/hugo/.docker/config.json (file not found), DOCKER_AUTH_CONFIG (not set)
+15:39:10.293 [Test worker] INFO tc.testcontainers/ryuk:0.5.1 -- Container testcontainers/ryuk:0.5.1 is starting: 43858f85f70d2ae2d135bc8313896cc2316de24aa86b123180945b6238f430db
+15:39:10.796 [Test worker] INFO tc.testcontainers/ryuk:0.5.1 -- Container testcontainers/ryuk:0.5.1 started in PT0.995547252S
+15:39:10.801 [Test worker] INFO org.testcontainers.utility.RyukResourceReaper -- Ryuk started - will monitor and terminate Testcontainers containers on JVM exit
+15:39:10.801 [Test worker] INFO org.testcontainers.DockerClientFactory -- Checking the system...
+15:39:10.802 [Test worker] INFO org.testcontainers.DockerClientFactory -- ✔︎ Docker server version should be at least 1.6.0
+15:39:10.802 [Test worker] INFO tc.postgres:15 -- Creating container for image: postgres:15
+15:39:10.828 [Test worker] INFO tc.postgres:15 -- Container postgres:15 is starting: 209de82a13a9dce310d96a8cfa2865cb0bde1355dea2a3864ceaa850d684dd67
+15:39:11.969 [Test worker] INFO tc.postgres:15 -- Container postgres:15 started in PT1.166126749S
+15:39:11.969 [Test worker] INFO tc.postgres:15 -- Container is started (JDBC URL: jdbc:postgresql://localhost:32769/testdb?loggerLevel=OFF)
+15:39:12.080 [Test worker] INFO org.springframework.test.context.support.AnnotationConfigContextLoaderUtils -- Could not detect default configuration classes for test class [com.example.demo.infrastructure.driven.postgres.BookDAOTest]: BookDAOTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+15:39:12.540 [Test worker] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper -- Found @SpringBootConfiguration com.example.demo.Tp1Application for test class com.example.demo.infrastructure.driven.postgres.BookDAOTest
 
   .   ____          _            __ _ _
  /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
@@ -130,32 +130,32 @@
 
  :: Spring Boot ::                (v3.4.4)
 
-2025-04-17T16:19:47.983+02:00  INFO 91501 --- [TP1] [    Test worker] c.e.d.i.driven.postgres.BookDAOTest      : Starting BookDAOTest using Java 21.0.6 with PID 91501 (started by hugo in /home/hugo/Travail/projects/test/TP1)
-2025-04-17T16:19:47.985+02:00  INFO 91501 --- [TP1] [    Test worker] c.e.d.i.driven.postgres.BookDAOTest      : No active profile set, falling back to 1 default profile: &quot;default&quot;
-2025-04-17T16:19:49.349+02:00  INFO 91501 --- [TP1] [    Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2025-04-17T16:19:49.657+02:00  INFO 91501 --- [TP1] [    Test worker] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@5c0b55bc
-2025-04-17T16:19:49.660+02:00  INFO 91501 --- [TP1] [    Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2025-04-17T16:19:50.101+02:00  INFO 91501 --- [TP1] [    Test worker] liquibase.database                       : Set default schema name to public
-2025-04-17T16:19:50.620+02:00  INFO 91501 --- [TP1] [    Test worker] liquibase.changelog                      : Creating database history table with name: public.databasechangelog
-2025-04-17T16:19:50.660+02:00  INFO 91501 --- [TP1] [    Test worker] liquibase.changelog                      : Reading from public.databasechangelog
-2025-04-17T16:19:50.743+02:00  INFO 91501 --- [TP1] [    Test worker] liquibase.lockservice                    : Successfully acquired change log lock
-2025-04-17T16:19:50.745+02:00  INFO 91501 --- [TP1] [    Test worker] liquibase.command                        : Using deploymentId: 4899590744
-2025-04-17T16:19:50.747+02:00  INFO 91501 --- [TP1] [    Test worker] liquibase.changelog                      : Reading from public.databasechangelog
-2025-04-17T16:19:50.761+02:00  INFO 91501 --- [TP1] [    Test worker] liquibase.ui                             : Running Changeset: db/changelog.xml::202504171600::hugo
-2025-04-17T16:19:50.770+02:00  INFO 91501 --- [TP1] [    Test worker] liquibase.changelog                      : Table book created
-2025-04-17T16:19:50.771+02:00  INFO 91501 --- [TP1] [    Test worker] liquibase.changelog                      : ChangeSet db/changelog.xml::202504171600::hugo ran successfully in 9ms
-2025-04-17T16:19:50.781+02:00  INFO 91501 --- [TP1] [    Test worker] liquibase.util                           : UPDATE SUMMARY
-2025-04-17T16:19:50.781+02:00  INFO 91501 --- [TP1] [    Test worker] liquibase.util                           : Run:                          1
-2025-04-17T16:19:50.782+02:00  INFO 91501 --- [TP1] [    Test worker] liquibase.util                           : Previously run:               0
-2025-04-17T16:19:50.782+02:00  INFO 91501 --- [TP1] [    Test worker] liquibase.util                           : Filtered out:                 0
-2025-04-17T16:19:50.782+02:00  INFO 91501 --- [TP1] [    Test worker] liquibase.util                           : -------------------------------
-2025-04-17T16:19:50.782+02:00  INFO 91501 --- [TP1] [    Test worker] liquibase.util                           : Total change sets:            1
-2025-04-17T16:19:50.784+02:00  INFO 91501 --- [TP1] [    Test worker] liquibase.util                           : Update summary generated
-2025-04-17T16:19:50.787+02:00  INFO 91501 --- [TP1] [    Test worker] liquibase.command                        : Update command completed successfully.
-2025-04-17T16:19:50.787+02:00  INFO 91501 --- [TP1] [    Test worker] liquibase.ui                             : Liquibase: Update has been successful. Rows affected: 1
-2025-04-17T16:19:50.790+02:00  INFO 91501 --- [TP1] [    Test worker] liquibase.lockservice                    : Successfully released change log lock
-2025-04-17T16:19:50.792+02:00  INFO 91501 --- [TP1] [    Test worker] liquibase.command                        : Command execution complete
-2025-04-17T16:19:51.499+02:00  INFO 91501 --- [TP1] [    Test worker] c.e.d.i.driven.postgres.BookDAOTest      : Started BookDAOTest in 3.993 seconds (process running for 15.765)
+2025-05-05T15:39:13.349+02:00  INFO 11157 --- [TP1] [    Test worker] c.e.d.i.driven.postgres.BookDAOTest      : Starting BookDAOTest using Java 21.0.6 with PID 11157 (started by hugo in /home/hugo/Travail/projects/test/TP1)
+2025-05-05T15:39:13.352+02:00  INFO 11157 --- [TP1] [    Test worker] c.e.d.i.driven.postgres.BookDAOTest      : No active profile set, falling back to 1 default profile: &quot;default&quot;
+2025-05-05T15:39:14.877+02:00  INFO 11157 --- [TP1] [    Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2025-05-05T15:39:15.109+02:00  INFO 11157 --- [TP1] [    Test worker] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@76f097ec
+2025-05-05T15:39:15.112+02:00  INFO 11157 --- [TP1] [    Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2025-05-05T15:39:15.464+02:00  INFO 11157 --- [TP1] [    Test worker] liquibase.database                       : Set default schema name to public
+2025-05-05T15:39:16.008+02:00  INFO 11157 --- [TP1] [    Test worker] liquibase.changelog                      : Creating database history table with name: public.databasechangelog
+2025-05-05T15:39:16.046+02:00  INFO 11157 --- [TP1] [    Test worker] liquibase.changelog                      : Reading from public.databasechangelog
+2025-05-05T15:39:16.152+02:00  INFO 11157 --- [TP1] [    Test worker] liquibase.lockservice                    : Successfully acquired change log lock
+2025-05-05T15:39:16.153+02:00  INFO 11157 --- [TP1] [    Test worker] liquibase.command                        : Using deploymentId: 6452356153
+2025-05-05T15:39:16.157+02:00  INFO 11157 --- [TP1] [    Test worker] liquibase.changelog                      : Reading from public.databasechangelog
+2025-05-05T15:39:16.179+02:00  INFO 11157 --- [TP1] [    Test worker] liquibase.ui                             : Running Changeset: db/changelog.xml::202504171600::hugo
+2025-05-05T15:39:16.191+02:00  INFO 11157 --- [TP1] [    Test worker] liquibase.changelog                      : Table book created
+2025-05-05T15:39:16.192+02:00  INFO 11157 --- [TP1] [    Test worker] liquibase.changelog                      : ChangeSet db/changelog.xml::202504171600::hugo ran successfully in 11ms
+2025-05-05T15:39:16.208+02:00  INFO 11157 --- [TP1] [    Test worker] liquibase.util                           : UPDATE SUMMARY
+2025-05-05T15:39:16.209+02:00  INFO 11157 --- [TP1] [    Test worker] liquibase.util                           : Run:                          1
+2025-05-05T15:39:16.209+02:00  INFO 11157 --- [TP1] [    Test worker] liquibase.util                           : Previously run:               0
+2025-05-05T15:39:16.209+02:00  INFO 11157 --- [TP1] [    Test worker] liquibase.util                           : Filtered out:                 0
+2025-05-05T15:39:16.209+02:00  INFO 11157 --- [TP1] [    Test worker] liquibase.util                           : -------------------------------
+2025-05-05T15:39:16.209+02:00  INFO 11157 --- [TP1] [    Test worker] liquibase.util                           : Total change sets:            1
+2025-05-05T15:39:16.211+02:00  INFO 11157 --- [TP1] [    Test worker] liquibase.util                           : Update summary generated
+2025-05-05T15:39:16.217+02:00  INFO 11157 --- [TP1] [    Test worker] liquibase.command                        : Update command completed successfully.
+2025-05-05T15:39:16.217+02:00  INFO 11157 --- [TP1] [    Test worker] liquibase.ui                             : Liquibase: Update has been successful. Rows affected: 1
+2025-05-05T15:39:16.222+02:00  INFO 11157 --- [TP1] [    Test worker] liquibase.lockservice                    : Successfully released change log lock
+2025-05-05T15:39:16.224+02:00  INFO 11157 --- [TP1] [    Test worker] liquibase.command                        : Command execution complete
+2025-05-05T15:39:16.961+02:00  INFO 11157 --- [TP1] [    Test worker] c.e.d.i.driven.postgres.BookDAOTest      : Started BookDAOTest in 4.164 seconds (process running for 13.572)
 </pre>
 </span>
 </div>
@@ -167,7 +167,7 @@
 <input id="line-wrapping-toggle" type="checkbox" autocomplete="off"/>
 </label>
 </div>Generated by 
-<a href="https://www.gradle.org">Gradle 8.13</a> at 17 avr. 2025, 16:19:55</p>
+<a href="https://www.gradle.org">Gradle 8.13</a> at 5 mai 2025, 15:39:21</p>
 </div>
 </div>
 </body>
